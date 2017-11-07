@@ -21,20 +21,18 @@ public class Psp_ejercicio5 {
      */
     public static void main(String[] args) {
         Hilo h1=new Hilo("1");
-        Hilo h2=new Hilo("2");
-        Hilo h3=new Hilo("3");
-        //Java hace lo que le da la gana con las prioridades
-        h1.setPriority(MAX_PRIORITY);
-        h2.setPriority(MIN_PRIORITY);
-        
+        Hilo h2=new Hilo("2");        
+        //Java hace lo que le da la gana con las prioridades, con lo que el resultado
+        //cambia en cada ejecucion
+        h1.setPriority(MIN_PRIORITY);
+        h2.setPriority(MAX_PRIORITY);        
         h2.start();
-        
         try {
+            //Si usamos el join() si sale siempre el resultado esperado, aunque cambiemos las prioridades
             h2.join();
         } catch (InterruptedException ex) {
             Logger.getLogger(Psp_ejercicio5.class.getName()).log(Level.SEVERE, null, ex);
         }
-        h3.start();
         h1.start();
     }
     

@@ -17,10 +17,9 @@ public class Hilo extends Thread{
     
     @Override
     public void run() {
-        System.out.println("El hilo "+this.getName()+" tiene prioridad "+this.getPriority());
-        for(int i=0;i<10;i++){
+        System.out.println("El hilo "+this.getName()+" se ha iniciado con prioridad "+this.getPriority());        
             System.out.println("Hola, soy el hilo numero "+this.getName());
-        }
+       
     }
     
 }
